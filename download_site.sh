@@ -204,7 +204,7 @@ if [ ${get_list_ind} -eq 1 ]; then
 			find ${directory}/ -type f -name '*.html' -exec awk -f ${dir}/liste_tab.awk -f ${dir}/put_html_into_tab.awk {} \; >> ${directory}/${category}.$$
 		
 			
-		# Log Par Marque
+		# Log Par category
 		cat  ${directory}/${category}.$$  | sort -u -k1,1 >> ${directory}/${category}.tab
 		nb_observe=`wc -l ${directory}/${category}.tab | awk '{print $1}'`
 		cat  ${directory}/${category}.tab >> ${dir}/${d}/extract.$$
